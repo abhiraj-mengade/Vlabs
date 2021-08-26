@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Break-Even Analysis</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script>
+
+	<script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true">
+	</script>
+
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+	</script>
+
+	<!-- Chart.js -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js">
+	</script>
+
+</head>
+
+<body style="background-color:black;">
+	<script src="js/script.js">
+
+	</script>
+	<div class="simscreen" id="screen1">
+		<img class ="center" src="images/screen1.png" width="95%" height="60%">
+     <i id="next-1" onclick="NextDiv()" class="fas fa-arrow-circle-right fa-4x next-button" style="color:white"></i>
+  </div>
+  <div class="simscreen" id="screen2">
+    <img class="center"src="images/screen2.png" width="95%" height="60%">
+   <i id="next-2" onclick="NextDiv()" class="fas fa-arrow-circle-right fa-4x next-button" style="color:white"></i>
+  </div>
+  
+  <div class="simscreen" id="screen3">
+    <h1 class="simscreen-heading">Calculating Total fixed cost and Variable cost</h1>
+    <div class="center container-fluid">
+       <div class="row">
+       <div class="col-xs-6 form-group" id="fixed-costs">
+          <h3 class="simscreen-names center">Fixed Costs</h3>
+          <ul>
+             <li>
+                <label for="rent">Building Rent :</label>
+                <input class="form-control" type="number"  id="rent" name="rent">
+             </li>
+             <li>
+                <label for="">Employee Wages :</label>
+                <input class="form-control" type="number" id="wages" name="wages">
+             </li>
+             <li>
+                <label for="otherFixed">Other Fixed Costs :</label>
+                <input class="form-control" type="number" id="otherFixed" name="otherFixed">
+             </li>
+          </ul>
+
+          <div class="center"><button onclick="inputFixed()" type="button"class="btn btn-info btn-sm">Submit</button></div>
+          <div class="msg-container" id="fixedMsg"></div>
+       </div>
+
+      <div class="col-xs-6 form-group"  id="variable-costs">
+          <h3 class="simscreen-names center">Variable Costs</h3>
+          <ul>
+             <li>
+                <label for="raw">Raw Materials :</label>
+                <input class="form-control" type="number"  id="raw" name="raw">
+             </li>
+             <li>
+                <label for="pack">Packaging :</label>
+                <input class="form-control" type="number" id="pack" name="pack">
+             </li>
+             <li>
+                <label for="otherVariable">Other Variable Costs :</label>
+                <input class="form-control" type="number" id="otherVariable" name="otherVariable">
+             </li>
+          </ul>
+
+          <div class="center">
+             <button type="button"class="btn btn-info btn-sm" onclick="inputVariable()">Submit</button>
+          </div>
+          
+          <div class="msg-container" id="variableMsg"></div>
+       </div>
+    </div>
+    </div>
+    <i id="next-3" onclick="NextDiv()" class="fas fa-arrow-circle-right fa-4x next-button" style="color:white"></i>
+</div>
+ 
+
+  <div class="simscreen" id="screen4">
+    <h1 class="simscreen-heading">Calculating the Total Revenue and Net Profit</h1>
+  <div class="revenue-container center">
+  <ul>
+  <li>
+  <label for="sp">Selling Price per unit :</label>
+  <input type="number" id="sp" name="sp">
+  </li>
+  <br>
+  <li>
+  <label for="qty">Quantity sold :</label>
+  <input type="number" id="qty" name="qty">
+  </li>
+  </ul>
+  </div>
+  
+  <br>
+
+  <div class="center">
+   <button type="button"class="btn btn-info btn-sm" onclick="inputOthers()">Submit</button>
+   </div>
+    <div class="msg-container" id="otherMsg"></div>
+   <i id="next-4" onclick="NextDiv()" class="fas fa-arrow-circle-right fa-4x next-button" style="color:white"></i>
+   
+  </div>
+  
+  <div class="simscreen" id="screen5">
+    <h1 class="simscreen-heading">Plotting the Break-even analysis graph</h1> 
+    <br>
+    <p><span class="sub-heading">Break even point (in units) = </span><span id="bepInUnits"></span></p>
+    <p><span class="sub-heading">Break even point (in sales) = </span><span id="bepInSales"></span></p>
+    <br>
+    <canvas id="myChart"></canvas>
+    <div class="replot-container">
+    <p>To replot the graph, fill the following details :</p>
+    
+  <li>
+  <label for="fixed">Total fixed cost : </label>
+  <input type="number" id="fixed" name="fixed">
+  </li>
+  
+  <li>
+  <label for="variable">Variable cost per unit : </label>
+  <input type="number" id="variable" name="variable">
+  </li>
+  
+  <li>
+  <label for="sp2">Selling Price : </label>
+  <input type="number" id="sp2" name="sp2">
+  </li>
+
+   <div class="center">
+    <button type="button"class="btn btn-info btn-sm" onclick="replot()">Submit</button></div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

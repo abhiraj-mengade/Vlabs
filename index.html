@@ -1,104 +1,15 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Break-Even Analysis</title>
-	<link href="css/style.css" rel="stylesheet" type="text/css" />
-
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-
-	</script>
-
-
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
-
-	</script>
-
-  <!-- Chart.js -->
-	<script src="https://cdn.jsdelivr.net/npm/chart.js">
-
-	</script>
-
-</head>
-
-<body>
-	<script src="js/script.js">
-
-	</script>
-	<div class="simscreen" id="screen1">
-		<img src="images/screen1.png" width="720" height="480">
-    <button onclick="NextDiv()">
-      <img src="images/Next.png" alt="next-button"></button>
-  </div>
-  <div class="simscreen" id="screen2">
-    <img src="images/screen2.png" width="720" height="480">
-    <button onclick="NextDiv()"><img src="images/Next.png" alt="next-button"></button>
-  </div>
-  
-  <div class="simscreen" id="screen3">
-    <h3>Fixed Costs</h3>
-    <ul>
-      <li>
-        <label for="rent">Building Rent</label>
-        <input type="number"  id="rent" name="rent">
-      </li>
-      <li>
-        <label for="">Employee Wages</label>
-        <input type="number" id="wages" name="wages">
-      </li>
-      <li>
-        <label for="otherFixed">Other Fixed Costs</label>
-        <input type="number" id="otherFixed" name="otherFixed">
-      </li>
-    </ul>
-    <button onclick="inputFixed()" class="btn btn-primary">Submit</button>
-    <p class="msg" id="fixedMsg"></p>
-     <h3>Variable Costs</h3>
-    <ul>
-      <li>
-        <label for="raw">Raw Materials</label>
-        <input type="number"  id="raw" name="raw">
-      </li>
-      <li>
-        <label for="pack">Packaging</label>
-        <input type="number" id="pack" name="pack">
-      </li>
-      <li>
-        <label for="otherFixed">Other Variable Costs</label>
-        <input type="number" id="otherVariable" name="otherFixed">
-      </li>
-    </ul>
-    <button onclick="inputVariable()" class="btn btn-primary">Submit</button>
-    <p class="msg" id="variableMsg"></p>
-    <button onclick="NextDiv()"><img src="images/Next.png" alt="next-button"></button>
-  </div>
-
-  <div class="simscreen" id="screen4">
-  <label for="sp">Selling Price per unit</label>
-  <input type="number" id="sp" name="sp">
-  <label for="qty">Quantity sold</label>
-  <input type="number" id="qty" name="qty">
-  <button onclick="inputOthers()" class="btn btn-primary">Submit</button>
-  <p class="msg" id="otherMsg"></p>
-  <button onclick="NextDiv()"><img src="images/Next.png" alt="next-button"></button>
-  </div>
-  
-  <div class="simscreen" id="screen5">
-    <p><span class="sub-heading">Break even point (in units) = </span><span id="bepInUnits"></span></p>
-    <p><span class="sub-heading">Break even point (in sales) = </span><span id="bepInSales"></span></p>
-     <button onclick="plot()" class="btn btn-primary">Submit</button>
-    <canvas id="myChart" width="300" height="300"></canvas>
-  </div>
-
-
-</body>
-
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vlab</title>
+    </head>
+    <body>
+        <h1>Vlab</h1>
+        <ul>
+           <li><a href="Break_Even/index.html" >Break-Even</a></li>
+           <li></li>
+           <li></li>
+        </ul>
+    </body>
 </html>
