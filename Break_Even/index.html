@@ -29,16 +29,26 @@
 
 </head>
 
-<body style="background-color:black;">
+<body style="background-color:#222831;">
 	<script src="js/script.js">
 
 	</script>
 	<div class="simscreen" id="screen1">
-		<img class ="center" src="images/screen1.png" width="95%" height="60%">
+    <div>
+      <h1 class="simscreen-heading">Break-Even Analysis</h1>
+      <br>
+      <h3  class="simscreen-names center">Objective: <h3> <p>To calculate and visualize break-even analysis for various types of businesses as, as well as thoroughly examine graphs of the same and to understand the various factors that influence break-even analysis.</p>
+    </div>
+	
      <i id="next-1" onclick="NextDiv()" class="fas fa-arrow-circle-right fa-4x next-button" style="color:white"></i>
   </div>
   <div class="simscreen" id="screen2">
-    <img class="center"src="images/screen2.png" width="95%" height="60%">
+    <div>
+      <h1 class="simscreen-heading">Defintions :</h1>
+      <h3  class="simscreen-names center">Fixed Cost:</h3><p>A fixed cost is a cost that does not change with an increase or decrease in the amount of goods or services produced or sold.</p>
+      <br>
+      <h3  class="simscreen-names center"> Variable Cost: </h3><p>A variable cost is a corporate expense that changes in proportion to how much a company produces or sells.</p>
+    </div>
    <i id="next-2" onclick="NextDiv()" class="fas fa-arrow-circle-right fa-4x next-button" style="color:white"></i>
   </div>
   
@@ -46,7 +56,7 @@
     <h1 class="simscreen-heading">Calculating Total fixed cost and Variable cost</h1>
     <div class="center container-fluid">
        <div class="row">
-       <div class="col-xs-6 form-group" id="fixed-costs">
+       <div class="col-xs-12 col-md-6 form-group" id="fixed-costs">
           <h3 class="simscreen-names center">Fixed Costs</h3>
           <ul>
              <li>
@@ -67,7 +77,7 @@
           <div class="msg-container" id="fixedMsg"></div>
        </div>
 
-      <div class="col-xs-6 form-group"  id="variable-costs">
+      <div class="col-xs-12 col-md-6 form-group"  id="variable-costs">
           <h3 class="simscreen-names center">Variable Costs</h3>
           <ul>
              <li>
@@ -128,28 +138,37 @@
     <p><span class="sub-heading">Break even point (in units) = </span><span id="bepInUnits"></span></p>
     <p><span class="sub-heading">Break even point (in sales) = </span><span id="bepInSales"></span></p>
     <br>
+    <div class= "container">
+      <div class = "row">
+    <div class="col-xs-12 col-md-6  chart-container">
     <canvas id="myChart"></canvas>
-    <div class="replot-container">
+    </div>
+
+
+    <div class="col-xs-12 col-md-6  replot-container">
     <p>To replot the graph, fill the following details :</p>
     
-  <li>
-  <label for="fixed">Total fixed cost : </label>
-  <input type="number" id="fixed" name="fixed">
-  </li>
+    <li>
+    <label for="fixed">Total fixed cost : </label>
+    <input type="number" id="fixed" name="fixed">
+    </li>
   
-  <li>
-  <label for="variable">Variable cost per unit : </label>
-  <input type="number" id="variable" name="variable">
-  </li>
+   <li>
+    <label for="variable">Variable cost per unit : </label>
+    <input type="number" id="variable" name="variable">
+   </li>
   
-  <li>
-  <label for="sp2">Selling Price : </label>
-  <input type="number" id="sp2" name="sp2">
-  </li>
+   <li>
+    <label for="sp2">Selling Price : </label>
+    <input type="number" id="sp2" name="sp2">
+   </li>
 
-   <div class="center">
+    <div class="center">
     <button type="button"class="btn btn-info btn-sm" onclick="replot()">Submit</button></div>
-    </div>
+    
+   </div>
+  </div>
+  </div>
   </div>
 
 

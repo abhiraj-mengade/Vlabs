@@ -48,7 +48,6 @@ function inputVariable() {
   document.getElementById("pack").value = null;
   document.getElementById("otherVariable").value = null;
   totalVariable = Number(raw) + Number(pack) + Number(otherVariable);
-  document.getElementById("variableMsg").innerHTML = "<p class='msg'>Total variable cost = " + totalVariable + "</p>";
   if (totalVariable>0) {
     document.getElementById("variableMsg").innerHTML = "<p class='msg'>Total variable cost = " + totalVariable + "</p>";
     if(totalFixed>0)
@@ -57,10 +56,10 @@ function inputVariable() {
     }
   }
   else if (totalVariable==0) {
-    document.getElementById("fixedMsg").innerHTML = "<p class='msg'>Total variable cost cannot be zero. Please input again.</p>";
+    document.getElementById("variableMsg").innerHTML = "<p class='msg'>Total variable cost cannot be zero. Please input again.</p>";
   }
   else {
-    document.getElementById("fixedMsg").innerHTML = "<p class='msg'>Total variable cost cannot be negative. Please input again.</p>";
+    document.getElementById("variableMsg").innerHTML = "<p class='msg'>Total variable cost cannot be negative. Please input again.</p>";
   }
 }
 
@@ -69,30 +68,28 @@ function inputOthers() {
   qty = document.getElementById("qty").value;
   document.getElementById("sp").value = null;
   document.getElementById("qty").value = null;
-  variablePerUnit = totalVariable/Number(qty);
-  bepUnits = totalFixed/(Number(sp) - variablePerUnit);
-  bepSales = bepUnits*Number(sp);
   revenue = sp*Number(qty);
   revenue = revenue.toFixed(3);
-  bepSales = bepSales.toFixed(3);
-  bepUnits = bepUnits.toFixed(3);
-  netProfit = (revenue - totalVariable - totalFixed).toFixed(3);
-  variablePerUnit = variablePerUnit.toFixed(3);
-  
-  document.getElementById("bepInUnits").innerText = bepUnits;
-  document.getElementById("bepInSales").innerText = bepSales;
-  plot();
-  document.getElementById("otherMsg").innerHTML = "<p class='msg'>Total revenue = " + revenue + "<br>Net Profit = " + netProfit + "</p>";
   if (revenue>0) {
+    netProfit = (revenue - totalVariable - totalFixed).toFixed(3);
+    variablePerUnit = totalVariable/Number(qty);
+    bepUnits = totalFixed/(Number(sp) - variablePerUnit);
+    bepSales = bepUnits*Number(sp);
+    bepSales = bepSales.toFixed(3);
+    bepUnits = bepUnits.toFixed(3);
+    document.getElementById("bepInUnits").innerText = bepUnits;
+    document.getElementById("bepInSales").innerText = bepSales;
+    plot();
     document.getElementById("otherMsg").innerHTML = "<p class='msg'>Total revenue = " + revenue + "</p> <p class='msg'>Net Profit = " + netProfit + "</p>";
     document.getElementById("next-4").style.visibility = "visible";
   }
   else if (revenue==0) {
-    document.getElementById("fixedMsg").innerHTML = "<p class='msg'>Total revenue cannot be zero. Please input again.</p>";
+    document.getElementById("otherMsg").innerHTML = "<p class='msg'>Total revenue cannot be zero. Please input again.</p>";
   }
   else {
-    document.getElementById("fixedMsg").innerHTML = "<p class='msg'>Total revenue cannot be negative. Please input again.</p>";
+    document.getElementById("otherMsg").innerHTML = "<p class='msg'>Total revenue cannot be negative. Please input again.</p>";
   }
+  
 }
 
 function generateData(value, i1 = 0, i2 = bepUnits*1.5, step = (bepUnits/10).toFixed(3)) {
