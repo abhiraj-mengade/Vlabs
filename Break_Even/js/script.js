@@ -77,7 +77,7 @@ function inputOthers() {
     bepSales = bepUnits*Number(sp);
     bepSales = bepSales.toFixed(3);
     bepUnits = bepUnits.toFixed(3);
-    document.getElementById("bepInUnits").innerText = bepUnits;
+    document.getElementById("bepInUnits").innerText = Math.round(bepUnits);
     document.getElementById("bepInSales").innerText = bepSales;
     plot();
     document.getElementById("otherMsg").innerHTML = "<p class='msg'>Total revenue = " + revenue + "</p> <p class='msg'>Net Profit = " + netProfit + "</p>";
@@ -97,7 +97,7 @@ function generateData(value, i1 = 0, i2 = bepUnits*1.5, step = (bepUnits/10).toF
   yValues=[];
   var x, i;
   for (x=i1, i=1; x <= i2; i++) {
-    xValues.push(x);
+    xValues.push(Number(x).toFixed(3));
     yValues.push(eval(value));
     if (i==10)
     {
@@ -138,22 +138,42 @@ dataset = [{
       data: []
     },
     { 
+      fill:false,
       label: "Total Cost",
-      pointRadius: 1,
-      backgroundColor:"rgba(75, 192, 192, 0.2)",
-      borderColor:"rgba(75, 192, 192, 1)",
+      pointRadius: 0,
+      borderWidth: 5,
+      backgroundColor:"14, 105, 94, 0.2)",
+      borderColor:"rgba(14, 105, 94, 1)",
       data: []
+    },
+    { 
+      fill:false,
+      label: "Loss Making Region",
+      pointRadius: 0,
+      borderWidth: 3,
+      borderDash: [10,5],
+      backgroundColor:"#fcb3d8",
+      data: [{x:0,y:bepSales},{x:bepUnits,y:bepSales}]
+    },
+    { 
+      fill:false,
+      label: "Profit Making Region",
+      pointRadius: 0,
+      borderWidth: 3,
+      borderDash: [10,5],
+      backgroundColor:"#bcd1f7",
+      data: [{x:bepUnits,y:0},{x:bepUnits,y:bepSales}]
     },
     {
       data: [ {
           x: bepUnits, 
           y: bepSales,
-          r: 5
+          r: 6
       } ],
       label: ['Break-Even Point'],
       steppedLine: true,
-      backgroundColor:"rgba(3, 229, 253, 0.2)",
-      borderColor:"rgba(3, 229, 253, 1)",
+      backgroundColor:"rgba(245, 66, 72, 1)",
+      borderColor:"rgba(245, 66, 72, 0.2)",
       type: 'bubble'
     }
     ]
@@ -165,15 +185,30 @@ dataset[1].data = yValues;
 generateData("x * variablePerUnit + totalFixed");
 dataset[2].data = yValues;
 
-
-
 chart = new Chart(document.getElementById("myChart"), {
   type: "line",
   data: {
     labels: xValues,
     datasets: dataset
   },
-  options: {}
+  options: {
+  scales: {
+     x: {
+        title: {
+          color: 'red',
+          display: true,
+          text: 'Quantity (in units)'
+        }
+     },
+    y: {
+        title: {
+          color: 'blue',
+          display: true,
+          text: 'Money (in Rs)'
+        }
+    }
+  }
+  }
 });
 }
 

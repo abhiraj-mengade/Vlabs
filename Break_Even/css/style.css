@@ -15,7 +15,6 @@
 
 
 canvas#myChart {
- 
   background-color:#FFEEDB;
   display: inline-block !important;
 }
@@ -97,13 +96,13 @@ li {
 
 .replot-container {
   display: inline-block;
-  padding-left: 2%;
+  padding: 1%;
 }
 
 .chart-container {
   position: relative;
   display: inline-block;
-  height: 50%;
+  height: 30%;
   width: 60%;
 }
 

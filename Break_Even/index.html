@@ -70,15 +70,15 @@
           <ul>
              <li>
                 <label for="rent">Building Rent :</label>
-                <input class="form-control" type="number"  id="rent" name="rent">
+                <input class="form-control" type="number"  id="rent" name="rent" placeholder="ex :- 10000">
              </li>
              <li>
                 <label for="">Employee Wages :</label>
-                <input class="form-control" type="number" id="wages" name="wages">
+                <input class="form-control" type="number" id="wages" name="wages" placeholder="ex :- 30000">
              </li>
              <li>
                 <label for="otherFixed">Other Fixed Costs :</label>
-                <input class="form-control" type="number" id="otherFixed" name="otherFixed">
+                <input class="form-control" type="number" id="otherFixed" name="otherFixed" placeholder="ex :- 25000">
              </li>
           </ul>
 
@@ -91,15 +91,15 @@
           <ul>
              <li>
                 <label for="raw">Raw Materials :</label>
-                <input class="form-control" type="number"  id="raw" name="raw">
+                <input class="form-control" type="number"  id="raw" name="raw" placeholder="ex :- 2000">
              </li>
              <li>
                 <label for="pack">Packaging :</label>
-                <input class="form-control" type="number" id="pack" name="pack">
+                <input class="form-control" type="number" id="pack" name="pack" placeholder="ex :- 1000">
              </li>
              <li>
                 <label for="otherVariable">Other Variable Costs :</label>
-                <input class="form-control" type="number" id="otherVariable" name="otherVariable">
+                <input class="form-control" type="number" id="otherVariable" name="otherVariable" placeholder="ex :- 200">
              </li>
           </ul>
 
@@ -121,12 +121,12 @@
   <ul>
   <li>
   <label for="sp">Selling Price per unit :</label>
-  <input type="number" id="sp" name="sp">
+  <input type="number" id="sp" name="sp" placeholder="ex :- 2000">
   </li>
   <br>
   <li>
   <label for="qty">Quantity sold :</label>
-  <input type="number" id="qty" name="qty">
+  <input type="number" id="qty" name="qty" placeholder="ex :- 10">
   </li>
   </ul>
   </div>
@@ -145,31 +145,30 @@
     <h1 class="simscreen-heading">Plotting the Break-even analysis graph</h1> 
     <br>
     <p><span class="sub-heading">Break even point (in units) = </span><span id="bepInUnits"></span></p>
-    <p><span class="sub-heading">Break even point (in sales) = </span><span id="bepInSales"></span></p>
+    <p><span class="sub-heading">Break even point (in sales) = Rs </span><span id="bepInSales"></span></p>
     <br>
     <div class= "container">
       <div class = "row">
     <div class="col-xs-12 col-md-6  chart-container">
-    <canvas id="myChart"></canvas>
+    <canvas id="myChart" style="height:27rem"></canvas>
     </div>
-
 
     <div class="col-xs-12 col-md-6  replot-container">
     <p>To replot the graph, fill the following details :</p>
     
     <li>
     <label for="fixed">Total fixed cost : </label>
-    <input type="number" id="fixed" name="fixed">
+    <input type="number" id="fixed" name="fixed" placeholder="ex :- 5000">
     </li>
   
    <li>
     <label for="variable">Variable cost per unit : </label>
-    <input type="number" id="variable" name="variable">
+    <input type="number" id="variable" name="variable" placeholder="ex :- 2">
    </li>
   
    <li>
     <label for="sp2">Selling Price : </label>
-    <input type="number" id="sp2" name="sp2">
+    <input type="number" id="sp2" name="sp2" placeholder="ex :- 18">
    </li>
 
     <div class="center">
