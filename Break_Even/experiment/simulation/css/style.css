@@ -100,10 +100,15 @@ li {
 }
 
 .chart-container {
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin:auto;
   position: relative;
   display: inline-block;
-  height: 30%;
   width: 60%;
+  height: 30%;
 }
 
 .definitions {
@@ -111,4 +116,3 @@ li {
   margin-left: auto;
   margin-right: auto;
 }
-

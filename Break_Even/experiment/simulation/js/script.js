@@ -191,7 +191,7 @@ chart = new Chart(document.getElementById("myChart"), {
     labels: xValues,
     datasets: dataset
   },
-  options: {
+  options: { responsive:false,
   scales: {
      x: {
         title: {
