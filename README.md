@@ -1,2 +1,2 @@
 # Vlabs
-A repository of simulations created as a CSD Project for the Management Lab, NITK. 
+A repository of simulations created as a CSD Project for the Management Lab, NITK.
