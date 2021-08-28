@@ -47,6 +47,7 @@ b. Variable Cost Line<br>
 d. None of these<br>
 <br>
 Q.8) If the average variable costs Rs. 10, average selling price is Rs. 25 and fixed costs are Rs. 60,000, then what is the break-even output?<br>
+
 **a. 4000**<br>
 b. 3500<br>
 c. 5000<br>
