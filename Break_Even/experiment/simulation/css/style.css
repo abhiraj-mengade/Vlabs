@@ -4,7 +4,7 @@
   width:72%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5%;
+  margin-top: 2%;
   margin-bottom: 5%;
 }
 
@@ -31,17 +31,18 @@ label{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color:#00ADB5;
   display: inline-block;
-  width:23rem;
+  width:25rem;
   text-align: left;
 
 }
 
 
 p{
-  font-size: 2.2rem;
-  color:#DDDDDD;
+  font-size: 2rem;
+  color:rgb(219, 243, 250);
   font-family:  serif;
 }
+
 .simscreen-names{
   font-size: 3.2rem;
   color:#F05454;
@@ -49,18 +50,31 @@ p{
 }
 
 .simscreen-heading {
-  font-size: 4rem;
-  color: #00FFF5;
+  font-size: 2.5rem;
+  color: rgb(190, 243, 146);
   text-align: center;
   font-family:"Times New Roman", Times, serif;
 }
-li {
+.main-heading{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 4rem;
+  color:#42f5b6;
+  text-align: center;
+}
+.input-li {
   margin: 0;
   padding: 1.2rem;
   list-style: none;
   justify-content: left;
   display: block;
   width:100%;
+}
+.concl-li{
+  margin: 0;
+  padding: 1.5rem;
+  justify-content: left;
+  width:100%;
+  color: whitesmoke 
 }
 
 #fixed-costs {
@@ -90,7 +104,7 @@ li {
   padding-top: 5%;
 }
 
-#next-3, #next-4 {
+#next-2, #next-3, #next-4 {
   visibility: hidden;
 }
 
@@ -115,4 +129,13 @@ li {
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.cost-labels {
+  width:30rem;
+}
+
+#conc-container {
+  width: 70%;
+  margin: auto;
 }
