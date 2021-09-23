@@ -18,9 +18,9 @@ d. Equipment lease<br>
 Q.3) What does total revenue depend upon?<br>
 a. Selling Price<br>
 b. Quantity<br>
-d. Both a & b<br>
 
-**c. None of the above**<br>
+**c. Both a & b**<br>
+d. None of the above<br>
 
 <br>
 Q.4) How is total revenue calculated?<br>

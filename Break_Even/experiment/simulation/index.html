@@ -1,195 +1,372 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width">
-      <title>Break-Even Analysis</title>
-      <link href="css/style.css" rel="stylesheet" type="text/css" />
-      <!-- Latest compiled and minified CSS -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-      <!-- jQuery library -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
-      <!-- Latest compiled JavaScript -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      <!-- Chart.js -->
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-   </head>
-   <body style="background-color:#222831;">
-      <script src="js/script.js"></script>
-      <div class="simscreen" id="screen1">
-         <div>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Break-Even Analysis</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <!-- Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.5/umd/popper.min.js"></script>
+    </head>
+    <body style="background-color:#222831;">
+        <script src="js/script.js"></script>
+        <script>
+        $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+        })
+        </script>
+        <div class="simscreen" id="screen1">
+            <div>
+                <h1 class="main-heading">Break-Even Analysis</h1>
+                <br>
+                <h3  class="simscreen-names center">
+                Objective: 
+                <h3>
+                <div class="definitions">
+                    <p>To calculate and visualize break-even analysis for various types of businesses as, as well as thoroughly examine graphs of the same and to understand the various factors that influence break-even analysis.</p>
+                </div>
+                <h3 class="simscreen-names center">Defintions :</h3>
+                <div class="definitions">
+                    <p>Fixed Cost: A fixed cost is a cost that does not change with an increase or decrease in the amount of goods or services produced or sold.</p>
+                </div>
+                <br>
+                <div class="definitions">
+                    <p>Variable Cost: A variable cost is a corporate expense that changes in proportion to how much a company produces or sells.</p>
+                </div>
+                <div class="calc center">
+                    <button class="btn btn-primary" onclick="Nav(1,2)" >START</button>
+                </div>
+            </div>
+        </div>
+        <div class="simscreen" id="screen2">
             <h1 class="main-heading">Break-Even Analysis</h1>
+            <div class="row tabs-container" style="" >
+                <div class="tab col-sm-4 tabs" id="calc1" onclick="setDiv(this)"><p>I. Calculating Total fixed cost and Variable cost<p></div>
+                <div class="tab col-sm-4 tabs" id="calc2" onclick="setDiv(this)"><p>II. Calculating the Total Revenue and Net Profit<p></div>
+                <div class="tab col-sm-4 tabs" id="calc3" onclick="setDiv(this)"><p>III. Plotting the Break-even analysis graph<p></div>
+            </div>
+            <div class="row calc-results">
+                <div class="col-xs-12 col-sm-12 col-md-2">
+                    <!-- Button trigger modal -->
+                    <h3 style="color: rgb(190, 243, 146);background-color:#686D76"class="btn btn-light cursor-pointer" data-toggle="modal" data-target="#exampleModalCenter">
+                        Results:
+                    </h3>
+                </div>
+            </div>
+            <div  class="simscreen" id="calc1-screen">
+                <h2 class="simscreen-heading">
+                Calculating Total fixed cost and Variable cost</h1>
+                <div class="center container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 form-group" id="fixed-costs">
+                            <h3 class="simscreen-names center">Fixed Costs</h3>
+                            <ul>
+                                <li class="input-li">
+                                    <label for="rent" class="cost-labels">Building Rent :</label>
+                                    <input class="form-control" type="number"  id="rent" name="rent" placeholder="ex :- 10000">
+                                </li>
+                                <li class="input-li">
+                                    <label for="wages" class="cost-labels">Employee Wages :</label>
+                                    <input class="form-control" type="number" id="wages" name="wages" placeholder="ex :- 30000">
+                                </li>
+                                <li class="input-li">
+                                    <label for="otherFixed" class="cost-labels">Other Fixed Costs :</label>
+                                    <input class="form-control" type="number" id="otherFixed" name="otherFixed" placeholder="ex :- 25000">
+                                </li>
+                            </ul>
+                            <div class="center"><button onclick="inputFixed()" type="button"class="btn btn-info btn-sm">Submit</button></div>
+                            <div class="msg-container" id="fixedMsg"></div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 form-group"  id="variable-costs">
+                            <h3 class="simscreen-names center">Variable Costs</h3>
+                            <ul>
+                                <li class="input-li">
+                                    <label for="raw" class="cost-labels">Raw Materials :</label>
+                                    <input class="form-control" type="number"  id="raw" name="raw" placeholder="ex :- 2000">
+                                </li>
+                                <li class="input-li">
+                                    <label for="pack" class="cost-labels">Packaging :</label>
+                                    <input class="form-control" type="number" id="pack" name="pack" placeholder="ex :- 1000">
+                                </li>
+                                <li class="input-li">
+                                    <label for="otherVariable" class="cost-labels">Other Variable Costs :</label>
+                                    <input class="form-control" type="number" id="otherVariable" name="otherVariable" placeholder="ex :- 200">
+                                </li>
+                            </ul>
+                            <div class="center">
+                                <button type="button"class="btn btn-info btn-sm" onclick="inputVariable()">Submit</button>
+                            </div>
+                            <div class="msg-container" id="variableMsg"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <i id="next-2" onclick="Nav(2,3)" class="fas fa-arrow-circle-right fa-4x next-button" style="color:white"></i>
+                    <i id="prev-1" onclick="Nav(2,1)" class="fas fa-arrow-circle-left fa-4x prev-button" style="color:white"></i> -->
+            </div>
+
+            <div  class="simscreen" id="calc2-screen">
+                <h2 class="simscreen-heading">Calculating the Total Revenue and Net Profit</h2>
+                
+
+                <div class="container-fluid">
+                  
+                    <div class="row">
+                       
+                        <div class="col-xs-12 col-md-6 form-group  center">
+                            <ul>
+                                <li class="input-li">
+                                    <h3 style="text-align:center;color:#32E0C4;background-color:#686D76"class="btn btn-light cursor-pointer" data-toggle="modal" data-target="#formulamodal">
+                                            Formulae:
+                                            </h3>
+                                </li>
+                                <li class="input-li">
+                                    <label for="sp">Selling Price per unit :</label>
+                                    <input type="number" id="sp" name="sp" placeholder="ex :- 2000">
+                                </li>
+                                <li class="input-li">
+                                    <label for="qty">Quantity sold :</label>
+                                    <input type="number" id="qty" name="qty" placeholder="ex :- 10">
+                                </li>
+                                <div class="msg-container" id="otherMsg"></div>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <p>Calculate the following:</p>
+                            <ul>
+                                <li class="input-li">
+                                    <label for="calcRevenue">Total revenue :</label>
+                                    <input data-toggle="tooltip"  data-placement="top" title="SellingPrice X Quantity" type="number" id="calcRevenue" name="calcRevenue">
+                                    <div class="msg-container" id="revenueMsg"></div>
+                                </li>
+                                <li class="input-li">
+                                    <label for="calcBEPUnits">BEP(in Units) :</label>
+                                    <input data-toggle="tooltip"  data-placement="top" title="FixedCost/(SellingPrice-(VariableCost/Quantity))" type="number" id="calcBEPUnits" name="calcBEPUnits">
+                                    <div class="msg-container" id="BEPUnitsMsg"></div>
+                                </li>
+                                <li class="input-li">
+                                    <label for="calcBEPSales">BEP(in Sales) :</label>
+                                    <input data-toggle="tooltip"  data-placement="top" title="(FixedCost X Quantity)/(SellingPrice-(VariableCost/Quantity))" type="number" id="calcBEPSales" name="calcBEPSales">
+                                    <div class="msg-container" id="BEPSalesMsg"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="center">
+                    <button type="button"class="btn btn-info btn-sm" onclick="inputOthers()">Submit</button>
+                </div>
+                <!-- <i id="next-3" onclick="Nav(3, 4)" class="fas fa-arrow-circle-right fa-4x next-button" style="color:white"></i>
+                <i id="prev-2" onclick="Nav(3, 2)" class="fas fa-arrow-circle-left fa-4x prev-button" style="color:white"></i> -->
+            </div>
+
+            <div  class="simscreen" id="calc3-screen">
+                <h2 class="simscreen-heading">
+                Plotting the Break-even analysis graph</h1> 
+                <br>
+                <p><span class="sub-heading">Break even point (in units) = </span><span id="bepInUnits"></span></p>
+                <p><span class="sub-heading">Break even point (in sales) = Rs </span><span id="bepInSales"></span></p>
+                <br>
+                <div class= "container">
+                    <div class = "row">
+                        <div class="col-xs-12 col-md-6  chart-container">
+                            <canvas class="center" id="myChart" style="height: 38rem; width:48rem; max-height:50%"></canvas>
+                        </div>
+                        <div class="col-xs-12 col-md-6  replot-container">
+                            <p>To replot the graph, fill the following details :</p>
+                            <li class="input-li">
+                                <label for="fixed">Total fixed cost : </label>
+                                <input type="number" id="fixed" name="fixed" placeholder="ex :- 5000">
+                            </li>
+                            <li class="input-li">
+                                <label for="variable">Variable cost per unit : </label>
+                                <input type="number" id="variable" name="variable" placeholder="ex :- 2">
+                            </li>
+                            <li class="input-li">
+                                <label for="sp2">Selling Price : </label>
+                                <input type="number" id="sp2" name="sp2" placeholder="ex :- 18">
+                            </li>
+                            <div class="center">
+                                <button type="button"class="btn btn-info btn-sm" onclick="replot()">Submit</button>
+                            </div>
+                            <div class="msg-container" id="replotvalMsg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="center">
+                    <button class="btn btn-primary" id="next-2" onclick="Nav(2,3)" >CONCLUSION</button>
+                </div>
+            </div>
+
+            
+        </div>
+        <!-- Modal -->
+        <div  class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div style="background-color:#373A40" class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="exampleModalLongTitle" style="color: rgb(190, 243, 146)">Results</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Total Fixed Cost: <span id="resFixed"></span></p>
+                        <p>Total Variable Cost: <span id="resVariable"></span></p>
+                        <p>Total Revenue: <span id="resRevenue"></span></p>
+                        <p>Net Profit: Rs <span id="resProfit"></span></p>
+                        <p>BEP (in units): <span id="resBepUnits"></span></p>
+                        <p>BEP (in sales): Rs <span id="resBepSales"></span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+           <!-- Modal Formula -->
+        <div  class="modal fade" id="formulamodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div style="background-color:#373A40" class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="exampleModalLongTitle" style="color: rgb(190, 243, 146)">Equations:</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>1. Total Revenue = SellingPrice X Quantity</p>
+                        <p>2. BEP (in units) = Fixed Cost / (SellingPrice-(Variable Cost/Quantity)</p>
+                        <p>3. BEP (in sales) = (Fixed Cost X Quantity)/(SellingPrice-(Variable Cost/Quantity))</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="simscreen" id="screen3">
+            <h1 class="main-heading">Break-Even Analysis</h1>
+            <div class="row tabs-container" >
+                <div class="col-sm-4 tabs" id="2" onclick="Nav(3,2)">Calculating Total fixed cost and Variable cost</div>
+                <div class="col-sm-4 tabs" id="3" onclick="Nav(3,3)">Calculating the Total Revenue and Net Profit</div>
+                <div class="col-sm-4 tabs" id="4" onclick="Nav(3,4)">Plotting the Break-even analysis graph</div>
+            </div>
+            <h2 class="simscreen-heading">Calculating the Total Revenue and Net Profit</h2>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 form-group  center">
+                        <ul>
+                            <div id="cost-display"></div>
+                            <li class="input-li">
+                                <label for="sp">Selling Price per unit :</label>
+                                <input type="number" id="sp" name="sp" placeholder="ex :- 2000">
+                            </li>
+                            <li class="input-li">
+                                <label for="qty">Quantity sold :</label>
+                                <input type="number" id="qty" name="qty" placeholder="ex :- 10">
+                            </li>
+                            <div class="msg-container" id="otherMsg"></div>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <p>Calculate the following:</p>
+                        <ul>
+                            <li class="input-li">
+                                <label for="calcRevenue">Total revenue :</label>
+                                <input data-toggle="tooltip"  data-placement="top" title="SellingPrice X Quantity" type="number" id="calcRevenue" name="calcRevenue">
+                                <div class="msg-container" id="revenueMsg"></div>
+                            </li>
+                            <li class="input-li">
+                                <label for="calcBEPUnits">BEP(in Units) :</label>
+                                <input data-toggle="tooltip"  data-placement="top" title="FixedCost/(SellingPrice-(VariableCost/Quantity))" type="number" id="calcBEPUnits" name="calcBEPUnits">
+                                <div class="msg-container" id="BEPUnitsMsg"></div>
+                            </li>
+                            <li class="input-li">
+                                <label for="calcBEPSales">BEP(in Sales) :</label>
+                                <input data-toggle="tooltip"  data-placement="top" title="(FixedCost X Quantity)/(SellingPrice-(VariableCost/Quantity))" type="number" id="calcBEPSales" name="calcBEPSales">
+                                <div class="msg-container" id="BEPSalesMsg"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="center">
+                <button type="button"class="btn btn-info btn-sm" onclick="inputOthers()">Submit</button>
+            </div>
+            <i id="next-3" onclick="Nav(3, 4)" class="fas fa-arrow-circle-right fa-4x next-button" style="color:white"></i>
+            <i id="prev-2" onclick="Nav(3, 2)" class="fas fa-arrow-circle-left fa-4x prev-button" style="color:white"></i>
+        </div>
+        <div class="simscreen" id="screen4">
+            <h1 class="main-heading">Break-Even Analysis</h1>
+            <div class="row tabs-container" >
+                <div class="col-sm-4 tabs" id="calc1" onclick="Nav(4,2)">Calculating Total fixed cost and Variable cost</div>
+                <div class="col-sm-4 tabs" id="calc2" onclick="Nav(4,3)">Calculating the Total Revenue and Net Profit</div>
+                <div class="col-sm-4 tabs" id="calc3" onclick="Nav(4,4)">Plotting the Break-even analysis graph</div>
+            </div>
+            <h2 class="simscreen-heading">
+            Plotting the Break-even analysis graph</h1> 
             <br>
-            <h3  class="simscreen-names center">
-            Objective: 
-            <h3>
-            <div class="definitions">
-               <p>To calculate and visualize break-even analysis for various types of businesses as, as well as thoroughly examine graphs of the same and to understand the various factors that influence break-even analysis.</p>
-            </div>
-            <h3 class="simscreen-names center">Defintions :</h3>
-            <div class="definitions">
-               <p>Fixed Cost: A fixed cost is a cost that does not change with an increase or decrease in the amount of goods or services produced or sold.</p>
-            </div>
+            <p><span class="sub-heading">Break even point (in units) = </span><span id="bepInUnits"></span></p>
+            <p><span class="sub-heading">Break even point (in sales) = Rs </span><span id="bepInSales"></span></p>
             <br>
-            <div class="definitions">
-               <p>Variable Cost: A variable cost is a corporate expense that changes in proportion to how much a company produces or sells.</p>
+            <div class= "container">
+                <div class = "row">
+                    <div class="col-xs-12 col-md-6  chart-container">
+                        <canvas id="myChart" style="height: 38rem; width:48rem; max-height:50%"></canvas>
+                    </div>
+                    <div class="col-xs-12 col-md-6  replot-container">
+                        <p>To replot the graph, fill the following details :</p>
+                        <li class="input-li">
+                            <label for="fixed">Total fixed cost : </label>
+                            <input type="number" id="fixed" name="fixed" placeholder="ex :- 5000">
+                        </li>
+                        <li class="input-li">
+                            <label for="variable">Variable cost per unit : </label>
+                            <input type="number" id="variable" name="variable" placeholder="ex :- 2">
+                        </li>
+                        <li class="input-li">
+                            <label for="sp2">Selling Price : </label>
+                            <input type="number" id="sp2" name="sp2" placeholder="ex :- 18">
+                        </li>
+                        <div class="center">
+                            <button type="button"class="btn btn-info btn-sm" onclick="replot()">Submit</button>
+                        </div>
+                        <div class="msg-container" id="replotvalMsg"></div>
+                    </div>
+                </div>
             </div>
-            <i id="next-1" onclick="Nav(1,2)" class="fas fa-arrow-circle-right fa-4x next-button" style="color:white"></i>
-         </div>
-      </div>
-      <div class="simscreen" id="screen2">
-         <h1 class="main-heading">Break-Even Analysis</h1>
-         <h2 class="simscreen-heading">
-         Calculating Total fixed cost and Variable cost</h1>
-         <div class="center container-fluid">
-            <div class="row">
-               <div class="col-xs-12 col-md-6 form-group" id="fixed-costs">
-                  <h3 class="simscreen-names center">Fixed Costs</h3>
-                  <ul>
-                     <li class="input-li">
-                        <label for="rent" class="cost-labels">Building Rent :</label>
-                        <input class="form-control" type="number"  id="rent" name="rent" placeholder="ex :- 10000">
-                     </li>
-                     <li class="input-li">
-                        <label for="wages" class="cost-labels">Employee Wages :</label>
-                        <input class="form-control" type="number" id="wages" name="wages" placeholder="ex :- 30000">
-                     </li>
-                     <li class="input-li">
-                        <label for="otherFixed" class="cost-labels">Other Fixed Costs :</label>
-                        <input class="form-control" type="number" id="otherFixed" name="otherFixed" placeholder="ex :- 25000">
-                     </li>
-                  </ul>
-                  <div class="center"><button onclick="inputFixed()" type="button"class="btn btn-info btn-sm">Submit</button></div>
-                  <div class="msg-container" id="fixedMsg"></div>
-               </div>
-               <div class="col-xs-12 col-md-6 form-group"  id="variable-costs">
-                  <h3 class="simscreen-names center">Variable Costs</h3>
-                  <ul>
-                     <li class="input-li">
-                        <label for="raw" class="cost-labels">Raw Materials :</label>
-                        <input class="form-control" type="number"  id="raw" name="raw" placeholder="ex :- 2000">
-                     </li>
-                     <li class="input-li">
-                        <label for="pack" class="cost-labels">Packaging :</label>
-                        <input class="form-control" type="number" id="pack" name="pack" placeholder="ex :- 1000">
-                     </li>
-                     <li class="input-li">
-                        <label for="otherVariable" class="cost-labels">Other Variable Costs :</label>
-                        <input class="form-control" type="number" id="otherVariable" name="otherVariable" placeholder="ex :- 200">
-                     </li>
-                  </ul>
-                  <div class="center">
-                     <button type="button"class="btn btn-info btn-sm" onclick="inputVariable()">Submit</button>
-                  </div>
-                  <div class="msg-container" id="variableMsg"></div>
-               </div>
+        </div> -->
+        <div class="simscreen" id="screen3">
+            <h1 class="main-heading">Break-Even Analysis</h1>
+            <h2 class="simscreen-heading">Conclusion</h2>
+            <div id="conc-container">
+                <ul>
+                    <li class="concl-li">
+                        <p>The Break-even point in units = <span id="concBEPUnits"></span></p>
+                    </li>
+                    <li class="concl-li">
+                        <p>The Break-even point in sales = Rs <span id="concBEPSales"></span></p>
+                    </li>
+                    <li class="concl-li">
+                        <p>By replotting the graph we were able to visulaize the effect of various variables like cost and selling price on the break-even point</p>
+                    </li>
+                </ul>
             </div>
-         </div>
-         <i id="next-2" onclick="Nav(2,3)" class="fas fa-arrow-circle-right fa-4x next-button" style="color:white"></i>
-         <i id="prev-1" onclick="Nav(2,1)" class="fas fa-arrow-circle-left fa-4x prev-button" style="color:white"></i>
-      </div>
-      <div class="simscreen" id="screen3">
-         <h1 class="main-heading">Break-Even Analysis</h1>
-         <h2 class="simscreen-heading">Calculating the Total Revenue and Net Profit</h2>
-         <div class="container-fluid">
-            <div class="row">
-               <div class="col-xs-12 col-md-6 form-group  center">
-                  <ul>
-                     <div id="cost-display"></div>
-                     <li class="input-li">
-                        <label for="sp">Selling Price per unit :</label>
-                        <input type="number" id="sp" name="sp" placeholder="ex :- 2000">
-                     </li>
-                     <li class="input-li">
-                        <label for="qty">Quantity sold :</label>
-                        <input type="number" id="qty" name="qty" placeholder="ex :- 10">
-                     </li>
-                     <div class="msg-container" id="otherMsg"></div>
-                  </ul>
-               </div>
-               <div class="col-xs-12 col-md-6">
-                  <p>Calculate the following:</p>
-                  <ul>
-                     <li class="input-li">
-                        <label for="calcRevenue">Total revenue :</label>
-                        <input title="SellingPrice X Quantity" type="number" id="calcRevenue" name="calcRevenue">
-                        <div class="msg-container" id="revenueMsg"></div>
-                     </li>
-                     <li class="input-li">
-                        <label for="calcBEPUnits">BEP(in Units) :</label>
-                        <input title="FixedCost/(SellingPrice-(VariableCost/Quantity))" type="number" id="calcBEPUnits" name="calcBEPUnits">
-                        <div class="msg-container" id="BEPUnitsMsg"></div>
-                     </li>
-                     <li class="input-li">
-                        <label for="calcBEPSales">BEP(in Sales) :</label>
-                        <input title="(FixedCost X Quantity)/(SellingPrice-(VariableCost/Quantity))" type="number" id="calcBEPSales" name="calcBEPSales">
-                        <div class="msg-container" id="BEPSalesMsg"></div>
-                     </li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-         <div class="center">
-            <button type="button"class="btn btn-info btn-sm" onclick="inputOthers()">Submit</button>
-         </div>
-         <i id="next-3" onclick="Nav(3, 4)" class="fas fa-arrow-circle-right fa-4x next-button" style="color:white"></i>
-         <i id="prev-2" onclick="Nav(3, 2)" class="fas fa-arrow-circle-left fa-4x prev-button" style="color:white"></i>
-      </div>
-      <div class="simscreen" id="screen4">
-         <h1 class="main-heading">Break-Even Analysis</h1>
-         <h2 class="simscreen-heading">
-         Plotting the Break-even analysis graph</h1> 
-         <br>
-         <p><span class="sub-heading">Break even point (in units) = </span><span id="bepInUnits"></span></p>
-         <p><span class="sub-heading">Break even point (in sales) = Rs </span><span id="bepInSales"></span></p>
-         <br>
-         <div class= "container">
-            <div class = "row">
-               <div class="col-xs-12 col-md-6  chart-container"><canvas id="myChart" style="height: 38rem; width:48rem; max-height:50%"></canvas></div>
-               <div class="col-xs-12 col-md-6  replot-container">
-                 <p>To replot the graph, fill the following details :</p>
-                  <li class="input-li">
-                     <label for="fixed">Total fixed cost : </label>
-                     <input type="number" id="fixed" name="fixed" placeholder="ex :- 5000">
-                  </li>
-                  <li class="input-li">
-                     <label for="variable">Variable cost per unit : </label>
-                     <input type="number" id="variable" name="variable" placeholder="ex :- 2">
-                  </li>
-                  <li class="input-li">
-                     <label for="sp2">Selling Price : </label>
-                     <input type="number" id="sp2" name="sp2" placeholder="ex :- 18">
-                  </li>
-                  <div class="center">
-                     <button type="button"class="btn btn-info btn-sm" onclick="replot()">Submit</button>
-                  </div>
-                  <div class="msg-container" id="replotvalMsg"></div>
-               </div>
-            </div>
-         </div>
-         <i id="next-4" onclick="Nav(4, 5)" class="fas fa-arrow-circle-right fa-4x next-button" style="color:white"></i>       
-         <i id="prev-3" onclick="Nav(4,3)" class="fas fa-arrow-circle-left fa-4x prev-button" style="color:white"></i>
-      </div>
-      <div class="simscreen" id="screen5">
-         <h1 class="main-heading">Break-Even Analysis</h1>
-         <h2 class="simscreen-heading">Conclusion</h2>
-         <div id="conc-container">
-            <ul>
-               <li class="concl-li">
-                  <p>The Break-even point in units = <span id="concBEPUnits"></span></p>
-               </li>
-               <li class="concl-li">
-                  <p>The Break-even point in sales = Rs <span id="concBEPSales"></span></p>
-               </li>
-               <li class="concl-li">
-                  <p>By replotting the graph we were able to visulaize the effect of various variables like cost and selling price on the break-even point</p>
-               </li>
-            </ul>
-         </div>
-         <i id="prev-4" onclick="Nav(5,4)" class="fas fa-arrow-circle-left fa-4x prev-button" style="color:white"></i>
-      </div>
-   </body>
+            <i id="prev-4" onclick="Nav(3,2)" class="fas fa-arrow-circle-left fa-4x prev-button" style="color:white"></i>
+        </div>
+    </body>
 </html>
-
-
