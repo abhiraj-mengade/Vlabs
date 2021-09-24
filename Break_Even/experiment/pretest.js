@@ -1,4 +1,3 @@
-
 // Don't touch the below code
 
 (function() {

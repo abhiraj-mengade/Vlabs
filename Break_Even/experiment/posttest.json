@@ -1,0 +1,61 @@
+[{
+    "question": "In any organization, profits depends mainly upon?",
+    "answers": {
+    "a": "Production cost",
+    "b": "Production output",
+    "c": "Revenue",
+    "d": "All of the above"
+    },
+    "correctAnswer": "d"
+},
+
+{
+    "question": "Given selling price is Rs 10 per unit, variable cost is Rs 6 per unit and fixed cost is Rs 5,000. What is the break-even point?",
+    "answers": {
+    "a": "500 units",
+    "b": "1000 units",
+    "c": "1250 units",
+    "d": "None of These"
+    },
+    "correctAnswer": "c"
+},
+
+{
+    "question": "The breakeven point is obtained at intersection of ?",
+    "answers": {
+    "a": "Total revenue and Total cost line",
+    "b": "Total cost and variable cost line",
+    "c": "Variable cost and fixed cost line",
+    "d": " Fixed cost and total cost line"
+    },
+    "correctAnswer": "a"
+},
+
+{
+    "question": "Given Break even sales is 40,000 Profit earned is Rs 2,000 and fixed cost is Rs 8,000. Determine actual sales.",
+    "answers": {
+    "a": "Rs. 50000",
+    "b": "Rs. 20000",
+    "c": "Rs. 32000",
+    "d": "None of the above"
+    },
+    "correctAnswer": "a"
+},
+
+{
+    "question": "The Break-even Point of a company is that level of sales income which will equal the sum of its fixed cost.",
+    "answers": {
+    "a": "True",
+    "b": "False",
+    },
+    "correctAnswer": "a"
+},
+
+{
+    "question": "While measuring break-even analysis, it is considered that during a specific period there will be no change in general price level, i.e., labor, cost of material and other overheads.",
+    "answers": {
+    "a": "True",
+    "b": "False",
+    },
+    "correctAnswer": "a"
+}]

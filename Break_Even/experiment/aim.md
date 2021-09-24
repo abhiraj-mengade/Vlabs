@@ -1,1 +1,1 @@
-#### The main objective is to calculate and visualize break-even analysis for various types of businesses, as well as thoroughly examine graphs of the same and to understand the various factors that influence break-even analysis.
+The main objective is to calculate and visualize break-even analysis for various types of businesses, as well as thoroughly examine graphs of the same and to understand the various factors that influence break-even analysis.
