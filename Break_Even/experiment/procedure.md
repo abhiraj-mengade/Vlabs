@@ -9,7 +9,7 @@
 3. Click on "calculating total revenue and net profit" and click on the "Formulae" button to get formulae<br>
 <img src="images/image3high.png"><br>
 
-4. Calculate the values using formulae and click on "Close" to close the formulae tab.<br><img src="images/image4.high.png"><br>
+4. Calculate the values using formulae and click on "Close" to close the formulae tab.<br><img src="images/image4high.png"><br>
 
 5. Input the values of selling price and quantity and calculate all the values and click on "Submit"<br>
 <img src="images/image5high.png"><br>
