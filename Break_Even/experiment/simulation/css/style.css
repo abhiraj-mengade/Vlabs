@@ -156,6 +156,10 @@ p{
     background-color: #222831;
 }
 
+.tabs:hover{
+    background-color: rgb(120, 147, 200)!important;
+    cursor: pointer;
+}
 #calc1 {
     pointer-events: auto;
     background-color: #373A40;
