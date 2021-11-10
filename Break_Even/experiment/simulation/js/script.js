@@ -21,6 +21,10 @@ var chart;
 function Nav(startDiv, endDiv) {
     document.getElementById("screen" + startDiv).style.display = "none";
     document.getElementById("screen" + endDiv).style.display = "block";
+    if (startDiv == 2 && endDiv == 3)
+        document.getElementById("calc3-screen").style.display = "none";
+    if (startDiv == 3 && endDiv == 2)
+        document.getElementById("calc3-screen").style.display = "block";
 }
 
 
@@ -120,26 +124,26 @@ function inputOthers() {
     revenue = sp * Number(qty);
     revenue = revenue.toFixed(3);
     if (qty <= 0) {
-        document.getElementById("otherMsg").innerHTML = "<p class='msg'>Quantity should be greater than zero.</p>";
+        document.getElementById("otherMsg").innerHTML = "<p>Quantity should be greater than zero.</p>";
         return null;
     }
     variablePerUnit = totalVariable / qty
     if (sp <= variablePerUnit) {
-        document.getElementById("otherMsg").innerHTML = "<p class='msg'>Variable cost per Unit should be less than Selling Price.</p>";
+        document.getElementById("otherMsg").innerHTML = "<p>Variable cost per Unit should be less than Selling Price.</p>";
         return null;
     }
     calcRevenue = Number(document.getElementById("calcRevenue").value).toFixed(3)
     calcBEPUnits = Number(document.getElementById("calcBEPUnits").value).toFixed(3)
     calcBEPSales = Number(document.getElementById("calcBEPSales").value).toFixed(3)
     if (calcRevenue <= 0) {
-        document.getElementById("revenueMsg").innerHTML = "<p class='msg'>Please calculate and input the value of Total Revenue</p>";
+        document.getElementById("revenueMsg").innerHTML = "<p>Please calculate and input the value of Total Revenue</p>";
     }
 
     if (calcBEPUnits <= 0) {
-        document.getElementById("BEPUnitsMsg").innerHTML = "<p class='msg'>Please calculate and input the value of Break-even Point(in units)</p>";
+        document.getElementById("BEPUnitsMsg").innerHTML = "<p>Please calculate and input the value of Break-even Point(in units)</p>";
     }
     if (calcBEPSales <= 0) {
-        document.getElementById("BEPSalesMsg").innerHTML = "<p class='msg'>Please calculate and input the value of Break-even Point(in sales)</p>";
+        document.getElementById("BEPSalesMsg").innerHTML = "<p>Please calculate and input the value of Break-even Point(in sales)</p>";
     }
 
     if (calcBEPSales > 0 && calcBEPUnits > 0 && calcRevenue > 0) {
@@ -157,24 +161,24 @@ function inputOthers() {
 
             if (calcRevenue == revenue) {
 
-                document.getElementById("revenueMsg").innerHTML = "<p class='msg'>Correct!</p>";
+                document.getElementById("revenueMsg").innerHTML = "<p>Correct!</p>";
             }
             else {
-                document.getElementById("revenueMsg").innerHTML = "<p class='msg'>Error = " + (calcRevenue - revenue).toFixed(3) + "</p>";
+                document.getElementById("revenueMsg").innerHTML = "<p>Error = " + (calcRevenue - revenue).toFixed(3) + "</p>";
             }
 
             if (calcBEPUnits == bepUnits) {
-                document.getElementById("BEPUnitsMsg").innerHTML = "<p class='msg'>Correct!</p>";
+                document.getElementById("BEPUnitsMsg").innerHTML = "<p>Correct!</p>";
             }
             else {
-                document.getElementById("BEPUnitsMsg").innerHTML = "<p class='msg'>Error = " + (calcBEPUnits - bepUnits).toFixed(3) + "</p>";
+                document.getElementById("BEPUnitsMsg").innerHTML = "<p>Error = " + (calcBEPUnits - bepUnits).toFixed(3) + "</p>";
             }
 
             if (calcBEPSales == bepSales) {
-                document.getElementById("BEPSalesMsg").innerHTML = "<p class='msg'>Correct!</p>";
+                document.getElementById("BEPSalesMsg").innerHTML = "<p>Correct!</p>";
             }
             else {
-                document.getElementById("BEPSalesMsg").innerHTML = "<p class='msg'>Error = " + (calcBEPSales - bepSales).toFixed(3) + "</p>";
+                document.getElementById("BEPSalesMsg").innerHTML = "<p>Error = " + (calcBEPSales - bepSales).toFixed(3) + "</p>";
             }
 
             document.getElementById("bepInUnits").innerText = Math.round(bepUnits);
@@ -182,7 +186,7 @@ function inputOthers() {
             document.getElementById("concBEPUnits").innerText = Math.round(bepUnits);
             document.getElementById("concBEPSales").innerText = bepSales;
             plot();
-            document.getElementById("otherMsg").innerHTML = "<p class='msg'>Total revenue = " + revenue + "</p> <p class='msg'>Net Profit = " + netProfit + "</p>";
+            document.getElementById("otherMsg").innerHTML = "<p>Total revenue = " + revenue + "</p> <p>Net Profit = " + netProfit + "</p>";
             document.getElementById("resRevenue").innerText = revenue;
             document.getElementById("resProfit").innerText = netProfit;
             document.getElementById("resBepUnits").innerText = bepUnits;
@@ -191,10 +195,10 @@ function inputOthers() {
             activateTab(3);
         }
         else if (revenue == 0) {
-            document.getElementById("otherMsg").innerHTML = "<p class='msg'>Total revenue cannot be zero. Please input again.</p>";
+            document.getElementById("otherMsg").innerHTML = "<p>Total revenue cannot be zero. Please input again.</p>";
         }
         else {
-            document.getElementById("otherMsg").innerHTML = "<p class='msg'>Total revenue cannot be negative. Please input again.</p>";
+            document.getElementById("otherMsg").innerHTML = "<p>Total revenue cannot be negative. Please input again.</p>";
         }
     }
 }

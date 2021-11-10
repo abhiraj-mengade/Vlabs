@@ -40,13 +40,16 @@ canvas#myChart {
 label{ 
   font-size: 1.8rem;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color:#00ADB5;
+  color:#bef392;
   display: inline-block;
   width:25rem;
   text-align: left;
 
 }
 
+input{
+  width: 100;
+}
 
 p{
   font-size: 2rem;
@@ -55,23 +58,35 @@ p{
 }
 
 .simscreen-names{
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
   font-size: 2.4rem;
-  color:#F05454;
-  font-family: 'Courier New', Courier, monospace;
+  color:#c9ffec;
+
 }
 
 .simscreen-heading {
   font-size: 2.5rem;
-  color: rgb(190, 243, 146);
+  color: white;
   text-align: center;
   font-family:"Times New Roman", Times, serif;
+  border-radius: 3rem;
+  background: #667fcc;
+  padding-top:1%;
+  padding-bottom: 1%;
 }
 .main-heading{
   font-family:'Times New Roman', Times, serif;
   font-size: 4rem;
-  color:#42f5b6;
+  color:white;
   text-align: center;
+  border-radius: 3rem;
+  background: #667fcc;
+  padding-top:1%;
+  padding-bottom: 1%;
 }
+
 .input-li {
   margin: 0;
   padding: 1.2rem;
@@ -167,4 +182,18 @@ p{
 
 .tab p {
     font-size: 1.8rem;
+}
+
+.def-heading{
+    color: #bef392;
+}
+
+#calc3-screen{
+  justify-content: center;
+}
+
+.border-box {
+ border-radius: 3rem;
+ border:0.2rem solid #667fcc;
+ padding:1%;
 }
