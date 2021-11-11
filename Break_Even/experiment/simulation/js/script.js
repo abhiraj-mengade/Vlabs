@@ -49,6 +49,7 @@ function activateTab(num){
     var v = document.getElementById("calc" + num.toString());
     v.style.pointerEvents = "auto";
     v.style.backgroundColor = "#373A40";
+    v.style.border="0.2rem solid #667fcc";
 }
 
 function deactivateTab(num){

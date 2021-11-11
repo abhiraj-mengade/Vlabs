@@ -150,17 +150,17 @@
                      <ul>
                         <li class="input-li">
                            <label for="calcRevenue">Total revenue :</label>
-                           <input data-toggle="tooltip"  data-placement="top" title="SellingPrice X Quantity" type="number" id="calcRevenue" name="calcRevenue">
+                           <input data-toggle="tooltip"  data-placement="top" title="SP X Qty" type="number" id="calcRevenue" name="calcRevenue">
                            <div class="msg-container" id="revenueMsg"></div>
                         </li>
                         <li class="input-li">
                            <label for="calcBEPUnits">BEP(in Units) :</label>
-                           <input data-toggle="tooltip"  data-placement="top" title="FixedCost/(SellingPrice-(VariableCost/Quantity))" type="number" id="calcBEPUnits" name="calcBEPUnits">
+                           <input data-toggle="tooltip"  data-placement="top" title="FC/(SP-(VC/Qty))" type="number" id="calcBEPUnits" name="calcBEPUnits">
                            <div class="msg-container" id="BEPUnitsMsg"></div>
                         </li>
                         <li class="input-li">
                            <label for="calcBEPSales">BEP(in Sales) :</label>
-                           <input data-toggle="tooltip"  data-placement="top" title="(FixedCost X Quantity)/(SellingPrice-(VariableCost/Quantity))" type="number" id="calcBEPSales" name="calcBEPSales">
+                           <input data-toggle="tooltip"  data-placement="top" title="FC X Qty/(SP-(VC/Qty))" type="number" id="calcBEPSales" name="calcBEPSales">
                            <div class="msg-container" id="BEPSalesMsg"></div>
                         </li>
                      </ul>
@@ -258,9 +258,7 @@
                   </button>
                </div>
                <div class="modal-body">
-                  <p>1. Total Revenue = SellingPrice X Quantity</p>
-                  <p>2. BEP (in units) = Fixed Cost / (SellingPrice-(Variable Cost/Quantity)</p>
-                  <p>3. BEP (in sales) = (Fixed Cost X Quantity)/(SellingPrice-(Variable Cost/Quantity))</p>
+                  <img src="./images/formulae.png" class="img-responsive">
                </div>
                <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
