@@ -197,3 +197,13 @@ p{
  border:0.2rem solid #667fcc;
  padding:1%;
 }
+
+@media only screen and (max-width: 600px) {
+     .simscreen {
+  width:90%;
+}
+
+canvas#myChart {
+  width: 90% !important;
+}
+}
