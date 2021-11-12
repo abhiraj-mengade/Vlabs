@@ -56,6 +56,7 @@ function deactivateTab(num){
     var v = document.getElementById("calc" + num.toString());
     v.style.pointerEvents = "none";
     v.style.backgroundColor = "#222831";
+    v.style.border = "none";
 }
 
 
